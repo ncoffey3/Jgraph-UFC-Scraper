@@ -1,0 +1,56 @@
+newgraph
+xaxis
+ min -20 max 40
+ mhash 9
+ hash_labels font Times-Italic
+ label : Wins by Method
+
+yaxis
+ size 1.5 min 0 max 3
+ nodraw
+copygraph yaxis draw_at 0
+
+(* Jim Miller *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 37 1
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 27 1
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 7 1
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -17 1
+
+(* Derrick Lewis *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 27 2
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 23 2
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 22 2
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -12 2
+
+newstring
+ hjl vjc
+ fontsize 9
+ font Helvetica-Narrow
+(* Jim Miller total wins *)
+ x 37.5 y 1 : 37
+(* Derrick Lewis total wins *)
+ copystring x 27.5 y 2 : 27
+copystring x 5 y 1.5 : Jim Miller
+copystring x 5 y 2.5 : Derrick Lewis
+(* total losses *)
+copystring x -17 y 1.4 : 17
+(* total losses *)
+copystring x -12 y 2.4 : 12
+legend top
+newcurve marktype ybar cfill 1 0 0 marksize 5 .2
+ label : Knockout
+newcurve marktype ybar cfill 0 .5 0 marksize 5 .2
+ label : Submission
+newcurve marktype ybar cfill 0 0 1 marksize 5 .2
+ label : Decision
+newcurve marktype ybar cfill .4 .4 .4 marksize 5 .2
+ label : Losses
+

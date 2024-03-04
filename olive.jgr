@@ -1,0 +1,56 @@
+newgraph
+xaxis
+ min -10 max 35
+ mhash 9
+ hash_labels font Times-Italic
+ label : Wins by Method
+
+yaxis
+ size 1.5 min 0 max 3
+ nodraw
+copygraph yaxis draw_at 0
+
+(* Charles Oliveira *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 34 1
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 31 1
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 10 1
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -9 1
+
+(* Islam Makhachev *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 25 2
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 16 2
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 5 2
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -1 2
+
+newstring
+ hjl vjc
+ fontsize 9
+ font Helvetica-Narrow
+(* Charles Oliveira total wins *)
+ x 34.5 y 1 : 34
+(* Islam Makhachev total wins *)
+ copystring x 25.5 y 2 : 25
+copystring x 5 y 1.5 : Charles Oliveira
+copystring x 5 y 2.5 : Islam Makhachev
+(* total losses *)
+copystring x -9 y 1.4 : 9
+(* total losses *)
+copystring x -1 y 2.4 : 1
+legend top
+newcurve marktype ybar cfill 1 0 0 marksize 5 .2
+ label : Knockout
+newcurve marktype ybar cfill 0 .5 0 marksize 5 .2
+ label : Submission
+newcurve marktype ybar cfill 0 0 1 marksize 5 .2
+ label : Decision
+newcurve marktype ybar cfill .4 .4 .4 marksize 5 .2
+ label : Losses
+

@@ -1,0 +1,56 @@
+newgraph
+xaxis
+ min -10 max 30
+ mhash 9
+ hash_labels font Times-Italic
+ label : Wins by Method
+
+yaxis
+ size 1.5 min 0 max 3
+ nodraw
+copygraph yaxis draw_at 0
+
+(* Brandon Moreno *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 21 1
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 16 1
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 5 1
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -8 1
+
+(* Alexandre Pantoja *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 27 2
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 18 2
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 8 2
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -5 2
+
+newstring
+ hjl vjc
+ fontsize 9
+ font Helvetica-Narrow
+(* Brandon Moreno total wins *)
+ x 21.5 y 1 : 21
+(* Alexandre Pantoja total wins *)
+ copystring x 27.5 y 2 : 27
+copystring x 5 y 1.5 : Brandon Moreno
+copystring x 5 y 2.5 : Alexandre Pantoja
+(* total losses *)
+copystring x -8 y 1.4 : 8
+(* total losses *)
+copystring x -5 y 2.4 : 5
+legend top
+newcurve marktype ybar cfill 1 0 0 marksize 5 .2
+ label : Knockout
+newcurve marktype ybar cfill 0 .5 0 marksize 5 .2
+ label : Submission
+newcurve marktype ybar cfill 0 0 1 marksize 5 .2
+ label : Decision
+newcurve marktype ybar cfill .4 .4 .4 marksize 5 .2
+ label : Losses
+

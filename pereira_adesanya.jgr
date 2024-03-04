@@ -1,0 +1,52 @@
+newgraph
+xaxis
+ min -5 max 25
+ mhash 9
+ hash_labels font Times-Italic
+ label : Wins by Method
+
+yaxis
+ size 1.5 min 0 max 3
+ nodraw
+copygraph yaxis draw_at 0
+
+(* Alex Pereira *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 9 1
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 8 1
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -2 1
+
+(* Israel Adesanya *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 24 2
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 17 2
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -3 2
+
+newstring
+ hjl vjc
+ fontsize 9
+ font Helvetica-Narrow
+(* Alex Pereira total wins *)
+ x 9.5 y 1 : 9
+(* Israel Adesanya total wins *)
+ copystring x 24.5 y 2 : 24
+copystring x 5 y 1.5 : Alex Pereira
+copystring x 5 y 2.5 : Israel Adesanya
+(* total losses *)
+copystring x -2 y 1.4 : 2
+(* total losses *)
+copystring x -3 y 2.4 : 3
+legend top
+newcurve marktype ybar cfill 1 0 0 marksize 5 .2
+ label : Knockout
+newcurve marktype ybar cfill 0 .5 0 marksize 5 .2
+ label : Submission
+newcurve marktype ybar cfill 0 0 1 marksize 5 .2
+ label : Decision
+newcurve marktype ybar cfill .4 .4 .4 marksize 5 .2
+ label : Losses
+

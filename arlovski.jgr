@@ -1,0 +1,55 @@
+newgraph
+xaxis
+ min -25 max 40
+ mhash 9
+ hash_labels font Times-Italic
+ label : Wins by Method
+
+yaxis
+ size 1.5 min 0 max 3
+ nodraw
+copygraph yaxis draw_at 0
+
+(* Andrei Arlovski *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 34 1
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 20 1
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 17 1
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -23 1
+
+(* Jim Miller *)
+newcurve marktype ybar marksize 0 .5 cfill 0 0 1 (* blue for dec *)
+pts 37 2
+newcurve marktype ybar marksize 0 .5 cfill 0 .5 0 (* green for sub *)
+pts 27 2
+newcurve marktype ybar marksize 0 .5 cfill 1 0 0 (* red for KO *)
+pts 7 2
+newcurve marktype ybar marksize 0 .5 cfill .4 .4 .4 (* grey for losses *)
+pts -17 2
+
+newstring
+ hjl vjc
+ fontsize 9
+ font Helvetica-Narrow
+(* Andrei Arlovski total wins *)
+ x 34.5 y 1 : 34
+(* Jim Miller total wins *)
+ copystring x 37.5 y 2 : 37
+ copystring x -17 y 2.4 : 17
+ copystring x -23 y 1.4 : 23
+copystring x 5 y 1.5 : Andrei Arlovski
+copystring x 5 y 2.5 : Jim Miller
+
+legend top
+newcurve marktype ybar cfill 1 0 0 marksize 5 .2
+ label : Knockout
+newcurve marktype ybar cfill 0 .5 0 marksize 5 .2
+ label : Submission
+newcurve marktype ybar cfill 0 0 1 marksize 5 .2
+ label : Decision
+newcurve marktype ybar cfill .4 .4 .4 marksize 5 .2
+ label : Losses
+
